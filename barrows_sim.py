@@ -70,11 +70,13 @@ def main(args):
                 if drop_received:
 
                     # Identical items cannot be given from the same chest.
-                    chosen_item_index = random.randint(0, len(received_items) - 1)
+                    chosen_item_index = \
+                        random.randint(0, len(received_items) - 1)
                     while chosen_item_index in chosen_indices:
 
                         # Assumed that duplicate items are re-rolled randomly.
-                        chosen_item_index = random.randint(0, len(received_items) - 1)
+                        chosen_item_index = \
+                        random.randint(0, len(received_items) - 1)
 
                     chosen_indices.append(chosen_item_index)
 
@@ -100,7 +102,7 @@ def main(args):
     print(f"Mean: {mean_chests}")
 
     # Write result to output file.
-    with open("barrows_results.txt", "+a", encoding="utf-8") as file:
+    with open("results.txt", "+a", encoding="utf-8") as file:
         output = f"{str(num_iterations)},{str(bros_killed)},"
         output += f"{str(starting_drops)},{str(mean_chests)}"
         file.write(output + "\n")
