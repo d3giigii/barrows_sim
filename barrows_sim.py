@@ -16,23 +16,10 @@ drop_chances = {
 }
 
 def verbose_print(verbose_mode, string):
-    """
-    Prints a string if verbose_mode is True.
-
-    Args:
-        verbose_mode (bool): Flag to enable verbose printing.
-        string (str): The string to print.
-    """
     if verbose_mode:
         print(string)
 
 def main(args):
-    """
-    Main function to simulate Barrows chest rewards.
-
-    Args:
-        args (Namespace): Parsed command-line arguments.
-    """
     # Handle input.
     num_iterations = getattr(args, "n")
     starting_drops = getattr(args, "s")
@@ -114,8 +101,8 @@ def main(args):
 
     # Write result to output file.
     with open("barrows_results.txt", "+a", encoding="utf-8") as file:
-        output = f"{str(num_iterations)},{str(bros_killed)}, \
-                   {str(starting_drops)},{str(mean_chests)}"
+        output = f"{str(num_iterations)},{str(bros_killed)},"
+        output += f"{str(starting_drops)},{str(mean_chests)}"
         file.write(output + "\n")
 
 if __name__ == "__main__":
