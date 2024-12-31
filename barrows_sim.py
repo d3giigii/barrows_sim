@@ -61,9 +61,9 @@ def main(args):
             # Determine if Barrows unique is dropped.
             for _ in range(num_rolls):
 
-                # Using a set would be more appropriate, but
+                # Using a set could be more appropriate, but
                 # iterating over it later leads to ~19% decrease
-                # in performance
+                # in performance at 10000 iterations. 
                 chosen_indices = []
                 drop_received = random.randint(1, drop_chance) == 1
 
